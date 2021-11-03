@@ -47,7 +47,7 @@ public class Steps {
 
     }
 
-    @Step("Получить все видеокарты")
+    @Step("Получить все видеокарты одной модели, которые есть в наличии")
     public static Map<String, Integer> getRes(GPUModelPage page)    {
        return page.getResults();
     }
