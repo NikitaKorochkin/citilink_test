@@ -27,23 +27,12 @@ public class CustomUtils {
     public static byte[] getScreen(WebDriver driver) {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File("src/main/resources/screen.png"));
-            return Files.readAllBytes(Paths.get("src/main/resources", "screen.png"));
+            FileUtils.copyFile(screenshot, new File("src/main/resources/screenshots/" + screenshot.getName()));
+            return Files.readAllBytes(Paths.get("src/main/resources/screenshots", screenshot.getName()));
         } catch (Exception e) {
             e.printStackTrace();
         }
         return new byte[0];
     }
 
-    @Attachment
-    public static byte[] attachText(WebDriver driver) {
-        File txt = null;
-        try {
-            FileUtils.copyFile(txt, new File("src/main/resources/text.txt"));
-            return Files.readAllBytes(Paths.get("src/main/resources", "text.txt"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new byte[0];
-    }
 }

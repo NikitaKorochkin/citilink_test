@@ -23,11 +23,9 @@ public class CitilinkGPUPage implements Page {
     @FindBy(xpath = "//div[@data-meta-name='FilterSeoLabelLayout']//a")
     private WebElement currentModelLink;
 
-
     public CitilinkGPUPage() {
         initPage();
     }
-
 
     @Override
     public boolean isPageLoaded() {
