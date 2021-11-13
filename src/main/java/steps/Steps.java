@@ -54,7 +54,7 @@ public class Steps {
             WebElement element = page.getElement(elementName);
             Actions actions = new Actions(WebDriverManager.getCurrentDriver());
             actions.moveToElement(element).click().build().perform();
-            Assertions.assertEquals(element.getText(), model);
+            Assertions.assertEquals(element.getText(), model, "Уточните название модели");
         } catch (NoSuchElementException e) {
             System.out.println("Модели " + model + " нет в списке");
         }

@@ -19,7 +19,7 @@ public class CitilinkGPUPage implements Page {
     @FindBy(xpath = "//div[@id='app-filter']//span[contains(text(), 'Показать все')]//ancestor::button")
     private WebElement filterShowAll;
 
-    @FieldName("Выбор модели")
+    @FieldName("Искомая модель")
     @FindBy(xpath = "//div[@data-meta-name='FilterSeoLabelLayout']//a")
     private WebElement currentModelLink;
 

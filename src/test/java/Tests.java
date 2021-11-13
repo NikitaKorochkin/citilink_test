@@ -7,7 +7,7 @@ import steps.Steps;
 
 public class Tests extends BaseTests    {
 
-    private final String FIRST_MODEL = "GTX 1050 Ti";
+    private final String FIRST_MODEL = "GTX 1660 SUPER";
     private final String SECOND_MODEL = "RTX 3080";
 
     @Test
@@ -21,7 +21,7 @@ public class Tests extends BaseTests    {
         CitilinkGPUPage citilinkGPUPage = new CitilinkGPUPage();
 
         Steps.clickOnElement(citilinkGPUPage, "Показать все");
-        Steps.chooseModel(citilinkGPUPage, FIRST_MODEL, "Выбор модели");
+        Steps.chooseModel(citilinkGPUPage, FIRST_MODEL, "Искомая модель");
         GPUModelPage firstGpuModelPage = new GPUModelPage();
         int firstModelLowestPrice = Steps.getLowestPriceGPU(Steps.getRes(firstGpuModelPage, FIRST_MODEL)).getValue();
         Steps.goBack(chromeDriver);
@@ -29,7 +29,7 @@ public class Tests extends BaseTests    {
 
         GPUModelPage secondGpuModelPage = new GPUModelPage();
         Steps.clickOnElement(citilinkGPUPage, "Показать все");
-        Steps.chooseModel(citilinkGPUPage, SECOND_MODEL, "Выбор модели");
+        Steps.chooseModel(citilinkGPUPage, SECOND_MODEL, "Искомая модель");
         int secondModelLowestPrice = Steps.getLowestPriceGPU(Steps.getRes(secondGpuModelPage, SECOND_MODEL)).getValue();
 
         Steps.firstPriceShouldBeLower(firstModelLowestPrice, secondModelLowestPrice);
