@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class CitilinkGPUPage implements Page {
 
-
     @FindBy(xpath = "//h1")
     private WebElement title;
 

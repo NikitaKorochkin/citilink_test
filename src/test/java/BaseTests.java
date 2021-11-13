@@ -14,7 +14,7 @@ public class BaseTests {
     }
 
     @AfterEach
-    public void closeBellTest(){
+    public void closeTest(){
         WebDriverManager.killCurrentDriver();
     }
 
